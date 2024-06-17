@@ -16,7 +16,6 @@ Run in react-app folder
 1. `nvm install 18.18.0`
 2. `nvm use`
 
-
 ## Installation
 For installation please run
 `yarn install` 
@@ -30,7 +29,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Please make sure** socket server is listening on port `8082` and fake api server is also up on port `3004`. 
+**Please make sure** socket server is listening on port `8080` and fake api server is also up on port `3004`. 
 **These projects can be found here**
 https://github.com/takeaway/scoober-fe-challenge-starter
 

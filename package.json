@@ -49,9 +49,7 @@
     "prepare": "husky"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app/jest"
-    ]
+    "extends": []
   },
   "browserslist": {
     "production": [

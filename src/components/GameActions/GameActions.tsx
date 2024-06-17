@@ -26,13 +26,7 @@ const GameActions: React.FC<GameActionsProps> = ({ selectedRoom }) => {
     const isGameInProgress = !isWon && !isLost;
     if (isGameInProgress) {
       const record = calculateRecord(number, selectedNumber, username);
-
-      console.log('----------------------------------------');
-      console.log(JSON.stringify(gameData));
-      console.log(JSON.stringify(record));
       const updatedGameData = [...gameData[selectedRoom], record];
-      console.log('----------------------------------------', updatedGameData);
-
       setGameData({ ...gameData, [selectedRoom]: updatedGameData });
       setDisabled(true);
       setWaitingForSecondUserToRespond(true);
