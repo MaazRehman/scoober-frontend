@@ -51,6 +51,7 @@ https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cb
 ## Next steps
 - [ ] Add graceful exit if a person leaves the room in the middle of the game
 - [ ] Add a condition of the server to handle only max of 2 people can join a human type room
+- [ ] The rooms are currently hard coded in a const file , we can make it dynamic via api
 - [ ] The page is rendered on the client side , ideally we can move this to server side for better loadtime and better SEO access.
 - [ ] Add lint-staged so that prettier changes can be staged on pre-commit hook
 - [ ] Add an e2e test to capture the journey using cypress so that we can also test e2e journey
