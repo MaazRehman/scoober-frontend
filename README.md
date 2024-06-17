@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+#### Tech Improvements
+
+- Add an `.nvmrc` file to switch to recommended version for node by repository owners.
+- Integrate sentry in the project
+- Move the code from javascript to typescript for better type support , abstraction and readability.
+- Add prettier, linter and static validator on pre-commit hook
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,211 +1,210 @@
 html {
-    font-family: Sans-serif, serif;
-    scroll-behavior: smooth;
+  font-family: Sans-serif, serif;
+  scroll-behavior: smooth;
 }
 .header {
-    background-color: #FF8000;
-    color: white;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    z-index: 2;
+  background-color: #ff8000;
+  color: white;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
 }
 
 .header * {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 header.header img,
 h3 img {
-    background-color: #E67300;
-    padding: 15px;
-    border-radius: 100%;
-    font-weight: 700;
+  background-color: #e67300;
+  padding: 15px;
+  border-radius: 100%;
+  font-weight: 700;
 }
 
 .header p {
-    font-weight: normal;
-    margin-top: 5px
+  font-weight: normal;
+  margin-top: 5px;
 }
 
 /* SideBar */
 .sidebar {
-    padding: 1em;
-    width: 230px;
+  padding: 1em;
+  width: 230px;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar li {
-    margin: 1em 0;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    max-width: 210px;
-    cursor: pointer;
+  margin: 1em 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  max-width: 210px;
+  cursor: pointer;
 }
 
 .sidebar li span {
-    color: #205A6D;
+  color: #205a6d;
 }
 
 .sidebar li svg {
-    width: 10px;
-    fill: #1574F5;
+  width: 10px;
+  fill: #1574f5;
 }
 
 .sidebar h4 {
-    font-weight: 700;
-    color: #205A6D !important;
+  font-weight: 700;
+  color: #205a6d !important;
 }
 
 .sidebar .active {
-    background-color: #1574F5 !important;
-    color: blue;
+  background-color: #1574f5 !important;
+  color: blue;
 }
 
 .sidebar .active * {
-    color: white !important;
-    fill: white !important;
+  color: white !important;
+  fill: white !important;
 }
 
 /* Main Content */
 .main-content {
-    display: flex;
-    flex: 1;
-    min-height: 100vh;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
 }
 
-.main-innerbody{
-    background-color: white;
-    height: 100%;
+.main-innerbody {
+  background-color: white;
+  height: 100%;
 }
 
 main {
-    width: calc(100% - 320px);
-    padding: 0 30px;
+  width: calc(100% - 320px);
+  padding: 0 30px;
 }
 
 /* Sticky Footer */
-html, body {
-    background-color: #f0f0f0;
-    height: 100%;
-    margin: 0;
+html,
+body {
+  background-color: #f0f0f0;
+  height: 100%;
+  margin: 0;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #0A3847;
-    color: white;
-    padding: 1em;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    box-sizing: border-box; /* Ensure padding is included in the width and height calculations */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #0a3847;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the width and height calculations */
 }
 
 .footer-content {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 /* Game Actions and Steps */
 .game-actions {
-    display: flex;
-    justify-content: center;
-    margin: 3em 1em 6em;
+  display: flex;
+  justify-content: center;
+  margin: 3em 1em 6em;
 }
 
 .game-actions button {
-    background-color: white !important;
-    border: none !important;
-    box-shadow: 0 4px 8px #00000052;
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    font-size: 20px;
-    color: #1574F5;
-    cursor: pointer;
-    font-weight: 600;
-    margin: 0 1em;
+  background-color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 8px #00000052;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  font-size: 20px;
+  color: #1574f5;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 1em;
 }
 
 .game-step {
-    margin: 1em;
-    display: flex;
-    gap: 16px;
-    font-weight: 400;
-    font-size: 12px;
-    color: #0A3847;
+  margin: 1em;
+  display: flex;
+  gap: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #0a3847;
 }
 
 .player-info {
-    display: flex;
-    align-items: center;
-    color: grey;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: grey;
+  margin-bottom: 10px;
 }
 
 .player-info img {
-    margin-right: 8px; /* Space between the image and username */
+  margin-right: 8px; /* Space between the image and username */
 }
 
 .game-step:nth-child(2n) {
-    justify-content: end;
-    flex-direction: row-reverse;
+  justify-content: end;
+  flex-direction: row-reverse;
 }
 
 .game-step:nth-child(2n) .Q-A div {
-    align-self: end;
-    text-align: right;
+  align-self: end;
+  text-align: right;
 }
 
 .game-step:nth-child(2n) .Q-A .step {
-    background-color: #1574F5;
+  background-color: #1574f5;
 }
 
 /* Step Styling */
 .step {
-    height: 70px;
-    width: 70px;
-    background-color: #205A6D;
-    color: white;
-    font-weight: 600;
-    font-size: 25px;
-    border-radius: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+  height: 70px;
+  width: 70px;
+  background-color: #205a6d;
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 /* Q-A Styling */
 .Q-A {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .big {
-    background-color: #F8F5F2;
-    width: 250px;
-    padding: 10px 20px;
-    border-radius: 3px;
+  background-color: #f8f5f2;
+  width: 250px;
+  padding: 10px 20px;
+  border-radius: 3px;
 }
-
-
