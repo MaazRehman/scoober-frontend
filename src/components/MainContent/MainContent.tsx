@@ -3,7 +3,6 @@ import GameStep from "../GameStep/GameStep";
 import GameActions from "../GameActions/GameActions";
 import DecisionFrame from "../DecisionFrame/DecisionFrame";
 import { useGameData } from "../../contexts/GameDataContext";
-import { leftStyle, rightStyle } from "../constants";
 import { useGameStatus } from "../../contexts/GameStatusContext";
 import Loader from "../Loader/Loader";
 import { usePresentationLogic } from "../../contexts/PresentationLogicContext";
