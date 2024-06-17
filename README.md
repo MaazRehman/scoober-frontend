@@ -25,8 +25,14 @@ For installation please run
 `npm install` or `npm install --force`
 
 ## Demo
-### Against CPU
+#### Against CPU
 
 https://github.com/MaazRehman/scoober-frontend/assets/25147055/d2be1b7d-bab1-428b-92c9-83a90a9cf467
+
+#### Multiplayer 
+
+https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cbd-8faa-13933d96f48b
+
+
 
 
