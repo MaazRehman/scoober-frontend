@@ -1831,15 +1831,6 @@
     "@sentry/types" "8.9.2"
     "@sentry/utils" "8.9.2"
 
-"@sentry-internal/tracing@7.114.0":
-  version "7.114.0"
-  resolved "https://registry.npmjs.org/@sentry-internal/tracing/-/tracing-7.114.0.tgz"
-  integrity sha512-dOuvfJN7G+3YqLlUY4HIjyWHaRP8vbOgF+OsE5w2l7ZEn1rMAaUbPntAR8AF9GBA6j2zWNoSo8e7GjbJxVofSg==
-  dependencies:
-    "@sentry/core" "7.114.0"
-    "@sentry/types" "7.114.0"
-    "@sentry/utils" "7.114.0"
-
 "@sentry/browser@8.9.2":
   version "8.9.2"
   resolved "https://registry.npmjs.org/@sentry/browser/-/browser-8.9.2.tgz"
@@ -1852,14 +1843,6 @@
     "@sentry/core" "8.9.2"
     "@sentry/types" "8.9.2"
     "@sentry/utils" "8.9.2"
-
-"@sentry/core@7.114.0":
-  version "7.114.0"
-  resolved "https://registry.npmjs.org/@sentry/core/-/core-7.114.0.tgz"
-  integrity sha512-YnanVlmulkjgZiVZ9BfY9k6I082n+C+LbZo52MTvx3FY6RE5iyiPMpaOh67oXEZRWcYQEGm+bKruRxLVP6RlbA==
-  dependencies:
-    "@sentry/types" "7.114.0"
-    "@sentry/utils" "7.114.0"
 
 "@sentry/core@8.9.2":
   version "8.9.2"
@@ -1880,29 +1863,10 @@
     "@sentry/utils" "8.9.2"
     hoist-non-react-statics "^3.3.2"
 
-"@sentry/tracing@^7.114.0":
-  version "7.114.0"
-  resolved "https://registry.npmjs.org/@sentry/tracing/-/tracing-7.114.0.tgz"
-  integrity sha512-eldEYGADReZ4jWdN5u35yxLUSTOvjsiZAYd4KBEpf+Ii65n7g/kYOKAjNl7tHbrEG1EsMW4nDPWStUMk1w+tfg==
-  dependencies:
-    "@sentry-internal/tracing" "7.114.0"
-
-"@sentry/types@7.114.0":
-  version "7.114.0"
-  resolved "https://registry.npmjs.org/@sentry/types/-/types-7.114.0.tgz"
-  integrity sha512-tsqkkyL3eJtptmPtT0m9W/bPLkU7ILY7nvwpi1hahA5jrM7ppoU0IMaQWAgTD+U3rzFH40IdXNBFb8Gnqcva4w==
-
 "@sentry/types@8.9.2":
   version "8.9.2"
   resolved "https://registry.npmjs.org/@sentry/types/-/types-8.9.2.tgz"
   integrity sha512-+LFOyQGl+zk5SZRGZD2MEURf7i5RHgP/mt3s85Rza+vz8M211WJ0YsjkIGUJFSY842nged5QLx4JysLaBlLymg==
-
-"@sentry/utils@7.114.0":
-  version "7.114.0"
-  resolved "https://registry.npmjs.org/@sentry/utils/-/utils-7.114.0.tgz"
-  integrity sha512-319N90McVpupQ6vws4+tfCy/03AdtsU0MurIE4+W5cubHME08HtiEWlfacvAxX+yuKFhvdsO4K4BB/dj54ideg==
-  dependencies:
-    "@sentry/types" "7.114.0"
 
 "@sentry/utils@8.9.2":
   version "8.9.2"
@@ -5915,6 +5879,11 @@ human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+husky@^9.0.11:
+  version "9.0.11"
+  resolved "https://registry.npmjs.org/husky/-/husky-9.0.11.tgz"
+  integrity sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==
 
 iconv-lite@^0.6.3:
   version "0.6.3"
