@@ -18,7 +18,7 @@ const GameStep: React.FC<GameStepProps> = ({
 }) => (
   <div
     className="game-step"
-    // @ts-ignore
+    // @ts-expect-error style support
     style={index % 2 === 0 ? leftStyle : rightStyle}
     data-testid="game-step"
   >

@@ -17,7 +17,7 @@ To switch to recommended version please run
 `nvm use`
 
 For installation please run
-`npm install` or `npm install --force`
+`yarn install` 
 
 ## Available Scripts
 

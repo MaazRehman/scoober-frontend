@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import * as Sentry from "@sentry/react";
 import reportWebVitals from './reportWebVitals';
 import Game from './components/Game/Game';
@@ -11,21 +11,22 @@ import { PresentationLogicProvider } from './contexts/PresentationLogicContext';
 
 
 Sentry.init({
-  dsn: "https://eb28302d865bcdfcd7934192c966fb2b@o4507321812910080.ingest.de.sentry.io/4507321817694288",
+  dsn: process.env.REACT_APP_SENTRY_DSN,
   integrations: [
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration(),
   ],
   // Performance Monitoring
-  tracesSampleRate: 1.0, //  Capture 100% of the transactions
-  // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-  tracePropagationTargets: ["localhost"],
+  tracesSampleRate: parseFloat(process.env.REACT_APP_SENTRY_TRACES_SAMPLE_RATE as string),
   // Session Replay
-  replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
-  replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
+  replaysSessionSampleRate: parseFloat(process.env.REACT_APP_SENTRY_REPLAYS_SESSION_SAMPLE_RATE as string),
+  replaysOnErrorSampleRate: parseFloat(process.env.REACT_APP_SENTRY_REPLAYS_ON_ERROR_SAMPLE_RATE as string),
 });
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+
+
+root.render(
   <React.StrictMode>
     <SocketProvider>
       <UserInfoProvider>
@@ -38,9 +39,7 @@ ReactDOM.render(
         </GameDataProvider>
       </UserInfoProvider>
     </SocketProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  </React.StrictMode>);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

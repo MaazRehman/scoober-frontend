@@ -5,10 +5,8 @@ import Sidebar from '../SideBar/SideBar';
 import MainContent from '../MainContent/MainContent';
 import useHandleOnReadyEvent from '../../hooks/useHandleOnReadyEvent';
 import './Game.css';
-import { useUserInfo } from '../../contexts/UserContext';
 
 const Game = () => {
-  const { setSelectedRoom } = useUserInfo();
   useHandleOnReadyEvent();
 
   return (

@@ -45,14 +45,14 @@ describe('<MainContent />', () => {
       setGameData: () => {},
     });
 
-    // @ts-ignore Adding ts ignore since there is no point in mocking all return value from hook
+    // @ts-expect-error Adding ts ignore since there is no point in mocking all return value from hook
     mockUseGameStatus.mockReturnValue({ isWon: false, isLost: false });
-    // @ts-ignore Adding ts ignore since there is no point in mocking all return value from hook
+    // @ts-expect-error Adding ts ignore since there is no point in mocking all return value from hook
     mockUsePresentationLogic.mockReturnValue({
       waitingForSecondUser: false,
       waitingForSecondUserToRespond: false,
     });
-    // @ts-ignore Adding ts ignore since there is no point in mocking all return value from hook
+    // @ts-expect-error Adding ts ignore since there is no point in mocking all return value from hook
     mockUseUserInfo.mockReturnValue({
       username: 'TestUser',
       selectedRoom: 'Room Berlin CPU',

@@ -20,7 +20,7 @@ describe('useHandleMessage', () => {
 
   it('should set socketId when receiving a welcome message', () => {
     const setSocketIdMock = jest.fn();
-    // @ts-ignore since there is no need to implement all members here
+    // @ts-expect-error" since there is no need to implement all members here
     mockedUseUserInfo.mockReturnValue({ setSocketId: setSocketIdMock });
 
     const mockSocket = {

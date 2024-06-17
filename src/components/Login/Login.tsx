@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Space, Button, notification } from 'antd';
+import { Input, Space, Button } from 'antd';
 
 import { useSocketClient } from '../../contexts/SocketClientContext';
 import { useUserInfo } from '../../contexts/UserContext';
@@ -28,7 +28,7 @@ const Login: React.FC = () => {
       <Button
         type="primary"
         onClick={handleLoginUser}
-        disabled={!Boolean(user)}
+        disabled={!user}
       >
         Login
       </Button>

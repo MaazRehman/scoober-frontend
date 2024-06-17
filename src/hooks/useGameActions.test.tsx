@@ -4,9 +4,8 @@ import { useGameData } from '../contexts/GameDataContext';
 import { useGameStatus } from '../contexts/GameStatusContext';
 import { useSocketClient } from '../contexts/SocketClientContext';
 import { usePresentationLogic } from '../contexts/PresentationLogicContext';
-import { events, gameState } from '../components/constants';
+import { gameState } from '../components/constants';
 import useGameActions from './useGameActions';
-import { calculateRecord } from '../components/utils';
 
 jest.mock('../contexts/UserContext');
 jest.mock('../contexts/GameDataContext');
@@ -92,9 +91,7 @@ describe('useGameActions', () => {
   });
 
   it('should handle activate your turn event correctly', () => {
-    const { result } = renderHook(() =>
-      useGameActions({ selectedRoom: 'Room 1' })
-    );
+    renderHook(() => useGameActions({ selectedRoom: 'Room 1' }));
 
     const data = {
       user: 'anyRandomSocketId',
