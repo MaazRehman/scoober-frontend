@@ -10,13 +10,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Move the code from javascript to typescript for better type support , abstraction and readability.
 - Add prettier, linter and static validator on pre-commit hook
 
+## Installation
+In this project you make sure you have recommended version of node , for that you'll need nvm installed.
+To switch to recommended version please run 
+
+`nvm use`
+
+For installation please run
+`npm install` or `npm install --force`
+
 ## Available Scripts
 
 In the project directory, you can run:
-
-## Installation
-For installation please run 
-`npm install` or `npm install --force`
 
 ### `yarn start`
 
