@@ -8,6 +8,8 @@ import React, {
 } from 'react';
 
 interface PresentationLogicContextType {
+  loading: boolean;
+  setLoading: Dispatch<SetStateAction<boolean>>;
   waitingForSecondUser: boolean;
   setWaitingForSecondUser: Dispatch<SetStateAction<boolean>>;
   waitingForSecondUserToRespond: boolean;
@@ -27,6 +29,7 @@ interface PresentationLogicProviderProps {
 export const PresentationLogicProvider: React.FC<
   PresentationLogicProviderProps
 > = ({ children }) => {
+  const [loading, setLoading] = useState(false);
   const [waitingForSecondUser, setWaitingForSecondUser] = useState(false);
   const [waitingForSecondUserToRespond, setWaitingForSecondUserToRespond] =
     useState(false);
@@ -35,6 +38,8 @@ export const PresentationLogicProvider: React.FC<
   return (
     <PresentationLogicContext.Provider
       value={{
+        loading,
+        setLoading,
         waitingForSecondUser,
         setWaitingForSecondUser,
         waitingForSecondUserToRespond,

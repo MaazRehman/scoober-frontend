@@ -18,6 +18,7 @@ const GameActions: React.FC = () => {
   const { number } = useGameActions({ selectedRoom });
   const { isWon, isLost } = useGameStatus();
 
+
   const sendSelectedNumber = (selectedNumber: number) => {
     const isGameInProgress = !isWon && !isLost;
     if (isGameInProgress) {

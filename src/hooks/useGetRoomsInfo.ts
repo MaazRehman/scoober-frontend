@@ -13,7 +13,7 @@ type UseGetRoomDataResult = {
   data: RoomData[];
 };
 
-const useGetRoomInfo = (): UseGetRoomDataResult => {
+const useGetRoomsInfo = (): UseGetRoomDataResult => {
   const [data, setData] = useState<RoomData[] | null>(null);
   const { setLoading } = usePresentationLogic();
 
@@ -48,4 +48,4 @@ const useGetRoomInfo = (): UseGetRoomDataResult => {
   return { data: memoizedData || [] };
 };
 
-export default useGetRoomInfo;
+export default useGetRoomsInfo;

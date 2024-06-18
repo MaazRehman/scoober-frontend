@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import GameActions from './GameActions';
 import useGameActions from '../../hooks/useGameActions';
+import useGetRoomsInfo from "../../hooks/useGetRoomsInfo";
 import { useSocketClient } from '../../contexts/SocketClientContext';
 import { usePresentationLogic } from '../../contexts/PresentationLogicContext';
 import { useGameStatus } from '../../contexts/GameStatusContext';
@@ -11,6 +12,7 @@ import { useUserInfo } from '../../contexts/UserContext';
 import { buttonValues, events } from '../constants';
 
 jest.mock('../../hooks/useGameActions');
+jest.mock('../../hooks/useGetRoomsInfo');
 jest.mock('../../contexts/SocketClientContext');
 jest.mock('../../contexts/PresentationLogicContext');
 jest.mock('../../contexts/GameStatusContext');
@@ -21,6 +23,12 @@ const mockUseSocketClient = useSocketClient as jest.Mock;
 const mockUsePresentationLogic = usePresentationLogic as jest.Mock;
 const mockUseGameStatus = useGameStatus as jest.Mock;
 const mockUseUserInfo = useUserInfo as jest.Mock;
+const rooms = [
+  { name: 'Room Berlin CPU', type: 'cpu' },
+  { name: 'Room Izmir CPU', type: 'cpu' },
+  { name: 'Room Amsterdam', type: 'human' },
+];
+
 
 describe('<GameActions />', () => {
   beforeEach(() => {
@@ -36,6 +44,8 @@ describe('<GameActions />', () => {
       username: 'TestUser',
       selectedRoom: 'Room Berlin CPU',
     });
+
+    (useGetRoomsInfo as jest.Mock).mockReturnValue({data: rooms})
   });
 
   afterEach(() => {

@@ -1,11 +1,3 @@
-export const rooms = [
-  { name: 'Room Berlin CPU', type: 'cpu' },
-  { name: 'Room Izmir CPU', type: 'cpu' },
-  { name: 'Room Amsterdam', type: 'human' },
-];
-
-export const defaultRoom = 'Room Amsterdam';
-
 export const events = {
   letsPlay: 'letsPlay',
   onReady: 'onReady',

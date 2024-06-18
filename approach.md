@@ -29,7 +29,7 @@
 
 - **Task: Implement Room Selection**
     - Description: List available rooms fetched from the fake API and allow users to join a room.
-    - Status: pending
+    - Status: Complete
 
 #### Story: Game Logic
 - **Task: Create Game Component**

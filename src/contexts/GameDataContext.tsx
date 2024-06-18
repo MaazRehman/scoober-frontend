@@ -1,19 +1,13 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { rooms } from '../components/constants';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import useGetRoomsInfo from "../hooks/useGetRoomsInfo";
 
 interface GameDataContextType {
   gameData: Record<string, any[]>;
   setGameData: React.Dispatch<React.SetStateAction<Record<string, any[]>>>;
 }
 
-const initialGameData: Record<string, any[]> = {};
-
-rooms.forEach((room) => {
-  initialGameData[room.name] = [];
-});
-
 const GameDataContext = createContext<GameDataContextType | undefined>(
-  undefined
+    undefined
 );
 
 interface GameDataProviderProps {
@@ -21,14 +15,25 @@ interface GameDataProviderProps {
 }
 
 export const GameDataProvider: React.FC<GameDataProviderProps> = ({
-  children,
-}) => {
-  const [gameData, setGameData] = useState(initialGameData);
+                                                                    children,
+                                                                  }) => {
+  const { data:  rooms } = useGetRoomsInfo();
+  const [gameData, setGameData] = useState<Record<string, any[]>>({});
+
+  useEffect(() => {
+    if ( rooms.length) {
+      const initialGameData: Record<string, any[]> = {};
+      rooms.forEach((room) => {
+        initialGameData[room.name] = [];
+      });
+      setGameData(initialGameData);
+    }
+  }, [rooms]);
 
   return (
-    <GameDataContext.Provider value={{ gameData, setGameData }}>
-      {children}
-    </GameDataContext.Provider>
+      <GameDataContext.Provider value={{ gameData, setGameData }}>
+        {children}
+      </GameDataContext.Provider>
   );
 };
 

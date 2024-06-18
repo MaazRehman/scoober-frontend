@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { waitFor } from '@testing-library/react';
-import useGetRoomInfo from './useGetRoomsInfo';
+import useGetRoomsInfo from './useGetRoomsInfo';
 import { usePresentationLogic } from '../contexts/PresentationLogicContext';
 import * as Sentry from '@sentry/react';
 
@@ -39,7 +39,7 @@ describe('useGetRoomInfo', () => {
       })
     ) as jest.Mock;
 
-    const { result } = renderHook(() => useGetRoomInfo());
+    const { result } = renderHook(() => useGetRoomsInfo());
 
     await waitFor(() => {
       expect(result.current.data).toEqual(mockData);
@@ -57,7 +57,7 @@ describe('useGetRoomInfo', () => {
       })
     ) as jest.Mock;
 
-    const { result } = renderHook(() => useGetRoomInfo());
+    const { result } = renderHook(() => useGetRoomsInfo());
 
     await waitFor(() => {
       expect(result.current.data).toEqual([]);
