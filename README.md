@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Scoober Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
+#### Against CPU
+
+https://github.com/MaazRehman/scoober-frontend/assets/25147055/d2be1b7d-bab1-428b-92c9-83a90a9cf467
+
+#### Multiplayer
+
+https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cbd-8faa-13933d96f48b
 
 ## Pre-Install
 The project requires node `v18.18.0` or above. There is a `.nvmrc` file which specified recommended version of node .
@@ -30,14 +37,12 @@ https://github.com/takeaway/scoober-fe-challenge-starter
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Demo
-#### Against CPU
+## Observability and Governance
+The error logs and performance metrics are both captured by a tool called sentry.
 
-https://github.com/MaazRehman/scoober-frontend/assets/25147055/d2be1b7d-bab1-428b-92c9-83a90a9cf467
-
-#### Multiplayer 
-
-https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cbd-8faa-13933d96f48b
+## Pre-commit
+On pre-commit automatically husky will run linting and unit test, if that is not the case , please run 
+`yarn prepare`
 
 ### Tech Improvements
 
@@ -45,7 +50,6 @@ https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cb
 - Integrate sentry in the project for logs and metrics
 - Move the code from javascript to typescript for better type support , abstraction and readability.
 - Add prettier, linter and static validator on pre-commit hook
-
 
 ## Next steps
 - [ ] Add graceful exit if a person leaves the room in the middle of the game
