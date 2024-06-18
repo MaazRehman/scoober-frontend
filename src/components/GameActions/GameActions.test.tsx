@@ -32,7 +32,7 @@ describe('<GameActions />', () => {
       setDisabled: jest.fn(),
     });
     mockUseGameStatus.mockReturnValue({ isWon: false, isLost: false });
-    mockUseUserInfo.mockReturnValue({ username: 'TestUser' });
+    mockUseUserInfo.mockReturnValue({ username: 'TestUser', selectedRoom: 'Room Berlin CPU' });
   });
 
   afterEach(() => {
@@ -42,7 +42,7 @@ describe('<GameActions />', () => {
   it('should render number and enabled buttons based on buttonValues', () => {
     render(
       <GameDataProvider>
-        <GameActions selectedRoom="Room Berlin CPU" />
+        <GameActions  />
       </GameDataProvider>
     );
 
@@ -67,7 +67,7 @@ describe('<GameActions />', () => {
 
     render(
       <GameDataProvider>
-        <GameActions selectedRoom="Room Berlin CPU" />
+        <GameActions />
       </GameDataProvider>
     );
 

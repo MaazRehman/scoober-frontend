@@ -9,18 +9,15 @@ import { useUserInfo } from '../../contexts/UserContext';
 import { buttonValues, events } from '../constants';
 import { Button } from 'antd';
 
-interface GameActionsProps {
-  selectedRoom: string;
-}
-
-const GameActions: React.FC<GameActionsProps> = ({ selectedRoom }) => {
+const GameActions: React.FC = () => {
   const { setWaitingForSecondUserToRespond, disabled, setDisabled } =
     usePresentationLogic();
   const { gameData, setGameData } = useGameData();
   const socket = useSocketClient();
+  const { username, selectedRoom } = useUserInfo();
   const { number } = useGameActions({ selectedRoom });
   const { isWon, isLost } = useGameStatus();
-  const { username } = useUserInfo();
+
 
   const sendSelectedNumber = (selectedNumber: number) => {
     const isGameInProgress = !isWon && !isLost;

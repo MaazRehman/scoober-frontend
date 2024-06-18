@@ -2,14 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
-#### Tech Improvements
-
-- Add an `.nvmrc` file to switch to recommended version for node by repository owners.
-- Integrate sentry in the project
-- Move the code from javascript to typescript for better type support , abstraction and readability.
-- Add prettier, linter and static validator on pre-commit hook
-
 ## Pre-Install
 The project requires node `v18.18.0` or above. There is a `.nvmrc` file which specified recommended version of node .
 Run in react-app folder
@@ -47,6 +39,14 @@ https://github.com/MaazRehman/scoober-frontend/assets/25147055/d2be1b7d-bab1-428
 
 https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cbd-8faa-13933d96f48b
 
+### Tech Improvements
+
+- Add an `.nvmrc` file to switch to recommended version for node by repository owners.
+- Integrate sentry in the project for logs and metrics
+- Move the code from javascript to typescript for better type support , abstraction and readability.
+- Add prettier, linter and static validator on pre-commit hook
+
+
 ## Next steps
 - [ ] Add graceful exit if a person leaves the room in the middle of the game
 - [ ] Add a condition of the server to handle only max of 2 people can join a human type room
@@ -58,6 +58,6 @@ https://github.com/MaazRehman/scoober-frontend/assets/25147055/18bb946c-6b04-4cb
 - [ ] Setup alerts using sentry
 - [ ] Add a PR template to project so that each pull request has a template.
 - [ ] Make main branch as protected
-- [ ] Setup CICD for the project
+- [ ] Setup CI CD for the project
 
 

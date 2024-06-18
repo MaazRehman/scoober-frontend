@@ -58,7 +58,7 @@ const MainContent: React.FC = () => {
           <Loader tip="Waiting for the second user to join" />
         )}
         {username ? (
-          <GameActions selectedRoom={selectedRoom} data-testid="game-actions" />
+          <GameActions  data-testid="game-actions" />
         ) : (
           ''
         )}
