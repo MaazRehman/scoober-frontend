@@ -21,7 +21,7 @@ const useGetRoomsInfo = (): UseGetRoomDataResult => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:3004/rooms');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/rooms`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
