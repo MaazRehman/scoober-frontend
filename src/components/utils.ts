@@ -24,13 +24,13 @@ export type CalculateRecordResult = {
  * @throws Will throw an error if the selectedNumber is not one of: 1, 0, -1 or if the number is not an integer.
  */
 export const calculateRecord = (
-    number: number,
-    selectedNumber: number,
-    username: string
+  number: number,
+  selectedNumber: number,
+  username: string
 ): CalculateRecordResult => {
   if (![1, 0, -1].includes(selectedNumber)) {
     throw new Error(
-        'The selectedNumber must be one of the following: 1, 0, -1'
+      'The selectedNumber must be one of the following: 1, 0, -1'
     );
   }
 

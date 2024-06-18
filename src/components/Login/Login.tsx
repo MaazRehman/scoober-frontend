@@ -25,11 +25,7 @@ const Login: React.FC = () => {
     <Space>
       {contextHolder}
       <Input onChange={(event) => setUser(event.target.value)} />
-      <Button
-        type="primary"
-        onClick={handleLoginUser}
-        disabled={!user}
-      >
+      <Button type="primary" onClick={handleLoginUser} disabled={!user}>
         Login
       </Button>
     </Space>

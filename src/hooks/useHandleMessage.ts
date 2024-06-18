@@ -23,12 +23,12 @@ const useHandleMessage = () => {
    * @param {MessageData} data - The data received from the socket.
    */
   const handleMessage = useCallback(
-      (data: MessageData) => {
-        if (data.message.includes(`Welcome ${data.user}`)) {
-          setSocketId(data.socketId);
-        }
-      },
-      [setSocketId]
+    (data: MessageData) => {
+      if (data.message.includes(`Welcome ${data.user}`)) {
+        setSocketId(data.socketId);
+      }
+    },
+    [setSocketId]
   );
 
   useEffect(() => {

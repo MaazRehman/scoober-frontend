@@ -41,50 +41,50 @@ const useGameActions = ({ selectedRoom }: UseGameActionsProps) => {
    * @param {boolean} data.isCorrectResult - Whether the result is correct.
    */
   const handleRandomNumber = useCallback(
-      (data: {
-        number: number;
-        selectedNumber: number;
-        user: string;
-        isFirst: boolean;
-        isCorrectResult: boolean;
-      }) => {
-        setWaitingForSecondUser(false);
+    (data: {
+      number: number;
+      selectedNumber: number;
+      user: string;
+      isFirst: boolean;
+      isCorrectResult: boolean;
+    }) => {
+      setWaitingForSecondUser(false);
 
-        if (data.isFirst) {
-          setNumber(Number(data.number));
-          return;
-        }
-
-        // if the incoming random number is coming from player 2 then we have to update the state so that player 1 can see
-        if (data.user !== username) {
-          const numberToUse = data.isCorrectResult ? number : data.number;
-          const record: CalculateRecordResult = calculateRecord(
-              numberToUse,
-              data.selectedNumber,
-              data.user
-          );
-          const roomData = gameData[selectedRoom];
-          const updatedGameData = [...roomData, record];
-
-          const lastRecord = roomData[roomData.length - 1];
-          if (!lastRecord || lastRecord.result !== 1) {
-            setGameData({ ...gameData, [selectedRoom]: updatedGameData });
-            setDisabled(true);
-          }
-        }
-
+      if (data.isFirst) {
         setNumber(Number(data.number));
-        window.scrollTo(0, document.body.scrollHeight);
-      },
-      [
-        gameData,
-        selectedRoom,
-        setGameData,
-        username,
-        number,
-        setWaitingForSecondUser,
-        setDisabled,
-      ]
+        return;
+      }
+
+      // if the incoming random number is coming from player 2 then we have to update the state so that player 1 can see
+      if (data.user !== username) {
+        const numberToUse = data.isCorrectResult ? number : data.number;
+        const record: CalculateRecordResult = calculateRecord(
+          numberToUse,
+          data.selectedNumber,
+          data.user
+        );
+        const roomData = gameData[selectedRoom];
+        const updatedGameData = [...roomData, record];
+
+        const lastRecord = roomData[roomData.length - 1];
+        if (!lastRecord || lastRecord.result !== 1) {
+          setGameData({ ...gameData, [selectedRoom]: updatedGameData });
+          setDisabled(true);
+        }
+      }
+
+      setNumber(Number(data.number));
+      window.scrollTo(0, document.body.scrollHeight);
+    },
+    [
+      gameData,
+      selectedRoom,
+      setGameData,
+      username,
+      number,
+      setWaitingForSecondUser,
+      setDisabled,
+    ]
   );
 
   /**
@@ -95,20 +95,20 @@ const useGameActions = ({ selectedRoom }: UseGameActionsProps) => {
    * @param {string} data.state - The current state of the game.
    */
   const handleActivateYourTurn = useCallback(
-      (data: { user: string; state: string }) => {
-        const isMePlaying =
-            data.user === socketId && data.state === gameState.play;
-        const isOtherUserWaiting =
-            data.user !== socketId && data.state === gameState.wait;
-        const isCurrentUserTurn = isMePlaying || isOtherUserWaiting;
+    (data: { user: string; state: string }) => {
+      const isMePlaying =
+        data.user === socketId && data.state === gameState.play;
+      const isOtherUserWaiting =
+        data.user !== socketId && data.state === gameState.wait;
+      const isCurrentUserTurn = isMePlaying || isOtherUserWaiting;
 
-        if (isMePlaying || isOtherUserWaiting) {
-          setWaitingForSecondUserToRespond(false);
-        }
+      if (isMePlaying || isOtherUserWaiting) {
+        setWaitingForSecondUserToRespond(false);
+      }
 
-        setDisabled(!isCurrentUserTurn);
-      },
-      [socketId, setDisabled, setWaitingForSecondUserToRespond]
+      setDisabled(!isCurrentUserTurn);
+    },
+    [socketId, setDisabled, setWaitingForSecondUserToRespond]
   );
 
   /**
@@ -119,22 +119,22 @@ const useGameActions = ({ selectedRoom }: UseGameActionsProps) => {
    * @param {boolean} data.isOver - Whether the game is over.
    */
   const handleGameOver = useCallback(
-      (data: { user: string; isOver: boolean }) => {
-        setDisabled(true);
-        setWaitingForSecondUserToRespond(false);
-        setNumber(0);
+    (data: { user: string; isOver: boolean }) => {
+      setDisabled(true);
+      setWaitingForSecondUserToRespond(false);
+      setNumber(0);
 
-        const hasCurrentUserWon = data.user === username && data.isOver;
-        hasCurrentUserWon ? setIsWon(true) : setIsLost(true);
-      },
-      [
-        username,
-        setDisabled,
-        setWaitingForSecondUserToRespond,
-        setIsWon,
-        setIsLost,
-        setNumber,
-      ]
+      const hasCurrentUserWon = data.user === username && data.isOver;
+      hasCurrentUserWon ? setIsWon(true) : setIsLost(true);
+    },
+    [
+      username,
+      setDisabled,
+      setWaitingForSecondUserToRespond,
+      setIsWon,
+      setIsLost,
+      setNumber,
+    ]
   );
 
   useEffect(() => {

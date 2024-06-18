@@ -57,11 +57,7 @@ const MainContent: React.FC = () => {
         {waitingForSecondUser && (
           <Loader tip="Waiting for the second user to join" />
         )}
-        {username ? (
-          <GameActions  data-testid="game-actions" />
-        ) : (
-          ''
-        )}
+        {username ? <GameActions data-testid="game-actions" /> : ''}
       </div>
     </main>
   );

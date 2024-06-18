@@ -6,12 +6,14 @@ import { useSocketClient } from '../../contexts/SocketClientContext';
 import { useUserInfo } from '../../contexts/UserContext';
 import { usePresentationLogic } from '../../contexts/PresentationLogicContext';
 import useSuccessNotification from '../../hooks/useSuccessNotification';
+import useGetRoomsInfo from "../../hooks/useGetRoomsInfo";
 import useHandleMessage from '../../hooks/useHandleMessage';
 
 jest.mock('../../contexts/SocketClientContext');
 jest.mock('../../contexts/UserContext');
 jest.mock('../../contexts/PresentationLogicContext');
 jest.mock('../../hooks/useSuccessNotification');
+jest.mock('../../hooks/useGetRoomsInfo');
 jest.mock('../../hooks/useHandleMessage');
 
 const rooms = [
@@ -44,7 +46,10 @@ describe('<Sidebar />', () => {
     });
 
     (useHandleMessage as jest.Mock).mockImplementation(() => {});
+    (useGetRoomsInfo as jest.Mock).mockReturnValue({data: rooms})
+
   });
+
 
   afterEach(() => {
     jest.clearAllMocks();

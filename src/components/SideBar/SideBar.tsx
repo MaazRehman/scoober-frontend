@@ -5,19 +5,22 @@ import { useSocketClient } from '../../contexts/SocketClientContext';
 import { useUserInfo } from '../../contexts/UserContext';
 import { usePresentationLogic } from '../../contexts/PresentationLogicContext';
 
-import { events, rooms } from '../constants';
+import { events } from '../constants';
 import useSuccessNotification from '../../hooks/useSuccessNotification';
+import useGetRoomsInfo from '../../hooks/useGetRoomsInfo';
+import Loader from '../Loader/Loader';
 
 const Sidebar: React.FC = () => {
   const { username, setSelectedRoom, selectedRoom } = useUserInfo();
   const socket = useSocketClient();
-  const { setWaitingForSecondUser } = usePresentationLogic();
+  const { setWaitingForSecondUser, loading } = usePresentationLogic();
   const [activeRoom, setActiveRoom] = useState<string>('');
   useHandleMessage();
   const { openNotificationWithIcon, contextHolder } = useSuccessNotification(
     'Room Joined Successfully',
     'Game will begin shortly'
   );
+  const { data: rooms } = useGetRoomsInfo();
 
   const handleJoinRoom = (roomName: string, roomType: string) => {
     if (selectedRoom) {
@@ -29,6 +32,10 @@ const Sidebar: React.FC = () => {
     socket.emit(events.joinRoom, { username, room: roomName, roomType });
     setWaitingForSecondUser(true);
   };
+
+  if (loading) {
+    return <Loader tip="Loading rooms ... " />;
+  }
 
   return (
     <aside className="sidebar">
